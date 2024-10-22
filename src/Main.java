@@ -37,5 +37,18 @@ public class Main {
                 // Aquí deberías pedir un nuevo PIN desde el código que llama este método
             }
         }
-    } 
+    }
+    
+    public boolean authenticateUser(String inputPin) {
+        int attempts = 0;
+        while (attempts < 3) {
+            if (this.pin.equals(inputPin)) {
+                return true;
+            } else {
+                attempts++;
+                System.out.println("PIN incorrecto. Intento " + attempts + " de 3.");
+            }
+        }
+        return false;
+    }
 }
