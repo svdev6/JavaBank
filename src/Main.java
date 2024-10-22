@@ -1,22 +1,41 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to JavaBankATM! Version control with Git.");
-        
-        public boolean authenticateUser(String inputPin) {
-            int attempts = 0;
-            
-            while (attempts < 3) {
-                if (this.pin.equals(inputPin)) {
-                    return true; // Si el PIN es correcto, retorna verdadero
-                } else {
-                    attempts++;
-                    System.out.println("PIN incorrecto. Intento " + attempts + " de 3.");
-                    // Aquí deberías pedir un nuevo PIN desde el código que llama este método
-                }
-            }
-            
-            return false; // Si no se acierta en 3 intentos, retorna falso
+        // Variables básicas
+        String accountNumber = "123456789";
+        double balance = 1500.75;
+        int pin = 1234;
+        boolean isActive = true;
+        char inicial = 'A';
+        byte edad = 30;
+        short smallNumber = 32000;
+        long bigNumber = 10000000000L;
+        float temperatura = 36.6f;
+
+        // Array de montos de transacciones
+        int[] transactionAmounts = {200, -100, 50};
+
+        // Operaciones con variables
+        balance += transactionAmounts[0];
+        if (balance > 0 && pin == 1234) {
+            System.out.println("Acceso concedido");
         }
+
+        balance++;
+        String status = (balance < 0) ? "Deuda" : "Crédito";
+        System.out.println("Estado de cuenta: " + status);
         
-    }
+        int attempts = 0;
+        int inputPin = 1234;
+
+        while (attempts < 3) {
+            if (pin == inputPin) {
+                boolean authenticateUser = true; // Si el PIN es correcto, retorna verdadero
+            } else {
+                attempts++;
+                System.out.println("PIN incorrecto. Intento " + attempts + " de 3.");
+                // Aquí deberías pedir un nuevo PIN desde el código que llama este método
+            }
+        }
+    } 
 }
