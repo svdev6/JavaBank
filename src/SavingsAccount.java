@@ -1,13 +1,16 @@
 public class SavingsAccount extends Account {
-    private double interestRate;
 
-    public SavingsAccount(String accountNumber, double initialBalance, double interestRate) {
-        super(accountNumber, initialBalance); 
-        this.interestRate = interestRate;
+    public SavingsAccount(String accountNumber, double balance, String pin) {
+        super(accountNumber, balance, pin);
     }
 
-    public void applyInterest() {
-        double interest = getBalance() * interestRate;
-        deposit(interest);
+    @Override
+    public void withdraw(double amount) throws InsufficientFundsException {
+        // Lógica específica para SavingsAccount...
+    }
+
+    @Override
+    public void deposit(double amount) {
+        // Implementación...
     }
 }
